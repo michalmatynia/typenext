@@ -26,7 +26,7 @@ const CT_ProductSection: React.FC = (): React.ReactElement => {
     ...selectedStyle('description', styles),
   })
   return (
-    <Box sx={{ ...styles.section }}>
+    <Box sx={styles.section}>
       <CT_GridContainer styleProps={{ justifyContent: 'center' }}>
         <CT_GridItem xs={12} sm={12} md={8}>
           <h2 css={TitleStyle}>Let{"'"}s talk product</h2>

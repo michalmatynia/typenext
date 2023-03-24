@@ -14,7 +14,7 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import { CT_CustomButton, CT_CustomDropdown } from '@components/ui'
 import { selectedStyle } from '@lib/component-helpers/nextjs-material-kit/styleSelectors'
 
-const Sparks_AppBarLinks: FC = (): React.ReactElement => {
+const Milkbar_AppBarLinks: FC = (): React.ReactElement => {
   const theme = useTheme()
 
   const styles = stylesFc(theme) as { [key: string]: CSSProperties }
@@ -46,20 +46,20 @@ const Sparks_AppBarLinks: FC = (): React.ReactElement => {
         </ListItem>
         <ListItem sx={styles.listItem}>
           <Tooltip
-            id="instagram-tooltip"
-            title="Follow us on instagram"
+            id="email-tooltip"
+            title="Send us an email"
             placement={'top'}
             classes={{ tooltip: styles.tooltip as string }}
           >
             <CT_CustomButton
               ct_color="transparent"
-              href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-              target="_blank"
+              href="mailto:info@milkbardesigners.com?subject=Subject"
+              // target="_blank"
               styleProps={styles.navLink}
             >
               <i
                 css={css({ ...styles.socialIcons })}
-                className={'fab fa-instagram'}
+                className={'far fa-envelope'}
               />
             </CT_CustomButton>
           </Tooltip>
@@ -68,5 +68,4 @@ const Sparks_AppBarLinks: FC = (): React.ReactElement => {
     </>
   )
 }
-
-export default Sparks_AppBarLinks
+export default Milkbar_AppBarLinks

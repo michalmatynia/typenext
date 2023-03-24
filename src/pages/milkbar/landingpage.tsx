@@ -13,9 +13,11 @@ import {
   Milkbar_AppBarLinks,
 } from '@components/ui'
 import stylesUntyped from '../../../styles/jss/nextjs-material-kit/pages/landingPage.js'
-import ProductSection from '../../../pages-sections/LandingPage-Sections/ProductSection'
-import TeamSection from '../../../pages-sections/LandingPage-Sections/TeamSection'
-import WorkSection from '../../../pages-sections/LandingPage-Sections/WorkSection'
+import Milkbar_ProductSection from '../../../pages-sections/Milkbar/LandinPage-Sections/ProductSection'
+import Milkbar_SectionCarousel from '../../../pages-sections/Milkbar/LandinPage-Sections/SectionCarousel'
+import Milkbar_IconCarousel from '../../../pages-sections//Milkbar/LandinPage-Sections/IconSection'
+import Milkbar_ContactSection from '../../../pages-sections/Milkbar/LandinPage-Sections/ContactSection'
+
 import { Box } from '@mui/material'
 
 // const dashboardRoutes = []
@@ -44,13 +46,11 @@ export default function LandingPage(props: FC): ReactNode {
             <CT_GridItem xs={12} sm={12} md={6}>
               <h1 css={css({ ...styles.title })}>Your Story Starts With Us.</h1>
               <h4>
-                Step into a world of adventure and excitement with our authentic
-                wooden toys and costumes. Products perfect for Renaissance
-                faires and historical events, including wooden swords, axes,
-                shields, and spears. We also offer costumes for children
-                inspired by the medieval period. Visit our historical tent on
-                the market and experience an authentic and immersive shopping
-                experience.
+                Welcome to MilkbarDesigners, your go-to solution for stunning
+                architectural visualisations. Our team of skilled designers and
+                3D artists specialize in bringing your architectural designs to
+                life with photorealistic renderings, animations and virtual
+                tours.
               </h4>
               <br />
             </CT_GridItem>
@@ -58,12 +58,14 @@ export default function LandingPage(props: FC): ReactNode {
         </Box>
       </CT_Parallax>
       <Box sx={{ ...styles.main, ...styles.mainRaised }}>
-        <Box sx={{ ...styles.container }}>
-          <ProductSection />
-          <TeamSection />
-          <WorkSection />
+        <Box sx={styles.container}>
+          <Milkbar_ProductSection />
+          <Milkbar_SectionCarousel />
         </Box>
       </Box>
+      <Milkbar_IconCarousel />
+      <Milkbar_ContactSection />
+
       <CT_Footer />
     </>
   )
