@@ -70,7 +70,7 @@ const Milkbar_ContactSection: React.FC = (): React.ReactElement => {
                 </CT_CardBody>
                 <CT_CardFooter styleProps={styles.cardFooter}>
                   <CT_CustomButton simple ct_color="primary" ct_size="lg">
-                    Send Message
+                    Send Messagesd
                   </CT_CustomButton>
                 </CT_CardFooter>
               </form>
