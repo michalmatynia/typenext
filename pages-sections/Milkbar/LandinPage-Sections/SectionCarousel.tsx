@@ -70,7 +70,7 @@ const Milkbar_SectionCarousel: FC = (): React.ReactElement => {
                   alt="First slide"
                   className="slick-image"
                   width={1000}
-                  height={400}
+                  height={500}
                 />
               </Box>
               <Box>
@@ -79,7 +79,7 @@ const Milkbar_SectionCarousel: FC = (): React.ReactElement => {
                   alt="Second slide"
                   className="slick-image"
                   width={1000}
-                  height={400}
+                  height={500}
                 />
               </Box>
               <Box>
@@ -88,7 +88,7 @@ const Milkbar_SectionCarousel: FC = (): React.ReactElement => {
                   alt="Third slide"
                   className="slick-image"
                   width={1000}
-                  height={400}
+                  height={500}
                 />
               </Box>
             </Carousel>

@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState, useEffect } from 'react'
+import React, { CSSProperties, useState, useEffect, FC } from 'react'
 import {
   CT_GridContainer,
   CT_GridItem,

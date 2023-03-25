@@ -15,9 +15,13 @@ interface CustomProps {
 type Props = CustomProps & BasicComponentProps
 
 const CT_CardHeader: FC<Props> = (props): React.ReactElement => {
-  const { children, color, plain, ...rest } = props
+  const { children, color, plain, styleProps, ...rest } = props
 
   const cardHeaderClasses = css({
+    ...(styleProps &&
+      ({
+        ...styleProps,
+      } as CSSObject)),
     ...(styles.cardHeader as CSSObject),
     ...(color &&
       ({

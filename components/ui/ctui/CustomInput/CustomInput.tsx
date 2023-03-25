@@ -16,6 +16,7 @@ interface CustomInputProps {
   formControlClasses?: string
   inputProps?: object
   inputStyleProps?: object
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 type Props = CustomInputProps & BasicComponentProps
 
@@ -34,6 +35,7 @@ const CT_CustomInput: FC<Props> = (props): React.ReactElement => {
     inputRootCustomClasses,
     inputProps,
     inputStyleProps,
+    onChange,
   } = props
 
   const labelClasses = {
@@ -87,6 +89,7 @@ const CT_CustomInput: FC<Props> = (props): React.ReactElement => {
           '&.Mui-disabled': styles.disabled,
           ...inputStyleProps,
         }}
+        onChange={onChange}
         id={id}
         {...inputProps}
       />

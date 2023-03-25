@@ -3,7 +3,7 @@
 /** @jsx jsx */
 
 import { css, jsx } from '@emotion/react'
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useState } from 'react'
 
 import stylesUntyped from '../../../styles/project/milkbar/pages/landingPageSections/workStyle'
 
@@ -17,12 +17,101 @@ import {
   CT_CardBody,
   CT_CardFooter,
 } from '@components/ui'
-import { Box, InputAdornment, Icon } from '@mui/material'
+import { Box, InputAdornment } from '@mui/material'
 import PeopleIcon from '@mui/icons-material/People'
 import EmailIcon from '@mui/icons-material/Email'
 
 const Milkbar_ContactSection: React.FC = (): React.ReactElement => {
   const styles = stylesUntyped as { [key: string]: CSSProperties }
+
+  const [messageInput, setMessageInput] = useState('')
+  const [emailInput, setEmailInput] = useState('')
+
+  // const processEmail = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   e.preventDefault()
+
+  //   try {
+  //     const response = await fetch('/api/sendEmail', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         email: emailInput,
+  //         message: messageInput,
+  //       }),
+  //     })
+
+  //     if (response.status === 200) {
+  //       console.log('Email sent successfully')
+  //       setEmailInput('')
+  //       setMessageInput('')
+  //     } else {
+  //       console.error('Error sending email')
+  //     }
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
+
+  // ---
+
+  // const processEmail = async (e: React.MouseEvent<Element>): Promise<void> => {
+  //   e.preventDefault()
+
+  //   try {
+  //     const response = await fetch('/api/sendEmail', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         email: emailInput,
+  //         message: messageInput,
+  //       }),
+  //     })
+
+  //     if (response.status === 200) {
+  //       console.log('Email sent successfully')
+  //       setEmailInput('')
+  //       setMessageInput('')
+  //     } else {
+  //       console.error('Error sending email')
+  //     }
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
+  const sendEmail = async (): Promise<void> => {
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: emailInput,
+          message: messageInput,
+        }),
+      })
+
+      if (response.status === 200) {
+        console.log('Email sent successfully')
+        setEmailInput('')
+        setMessageInput('')
+      } else {
+        console.error('Error sending email')
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const processEmail = (e: React.MouseEvent<Element>): void => {
+    e.preventDefault()
+
+    sendEmail() as unknown as void
+  }
 
   return (
     <Box sx={styles.section}>
@@ -49,6 +138,7 @@ const Milkbar_ContactSection: React.FC = (): React.ReactElement => {
                         </InputAdornment>
                       ),
                     }}
+                    onChange={(e) => setEmailInput(e.target.value)}
                   />
                   <CT_CustomInput
                     labelText="Message"
@@ -66,11 +156,17 @@ const Milkbar_ContactSection: React.FC = (): React.ReactElement => {
                         </InputAdornment>
                       ),
                     }}
+                    onChange={(e) => setMessageInput(e.target.value)}
                   />
                 </CT_CardBody>
                 <CT_CardFooter styleProps={styles.cardFooter}>
-                  <CT_CustomButton simple ct_color="primary" ct_size="lg">
-                    Send Messagesd
+                  <CT_CustomButton
+                    simple
+                    ct_color="primary"
+                    ct_size="lg"
+                    onClick={(e) => processEmail(e)}
+                  >
+                    Send Message
                   </CT_CustomButton>
                 </CT_CardFooter>
               </form>
