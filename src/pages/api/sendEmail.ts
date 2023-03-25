@@ -1,35 +1,43 @@
-import nodemailer from 'nodemailer'
+import { NextApiRequest, NextApiResponse } from 'next'
 
-const handler = async (req, res) => {
-  const { email, message } = req.body as { email: string; message: string }
+import { Transporter, createTransport } from 'nodemailer'
+import Mail from 'nodemailer/lib/mailer'
+import SMTPTransport, { SentMessageInfo } from 'nodemailer/lib/smtp-transport'
 
-  // create transporter
-  const transporter = nodemailer.createTransport({
-    host: 'mail.milkbardesigners.com', // mail.tryzna.pl // milkbardesigners.com,
+interface EmailRequestBody {
+  email: string
+  message: string
+}
+
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const { email, message } = req.body as EmailRequestBody
+
+  const transporterOptions: SMTPTransport.Options = {
+    host: 'mail.milkbardesigners.com',
     port: 465,
     secure: true,
     auth: {
-      user: 'info@milkbardesigners.com',
-      pass: 'toblerone1982', // add as Server ENV
-
-      //   pass: process.env.EMAIL_PASS, // add as Server ENV
+      user: process.env.NEXT_PUBLIC_EMAIL_USER,
+      pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
     },
-  }) as nodemailer.Transporter
+  }
 
-  // create email message
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const transporter: Transporter<SentMessageInfo> = createTransport(
+    transporterOptions
+  ) as Mail<SentMessageInfo>
+
   const mailOptions = {
     from: email,
-    // from: process.env.EMAIL_USER,
-    to: 'mmatynia@gmail.com',
+    to: process.env.NEXT_PUBLIC_EMAIL_USER,
     subject: 'New message from contact form',
     text: message,
   }
 
   try {
-    // send email
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     await transporter.sendMail(mailOptions)
 
-    // respond with success message
     res.status(200).json({ message: 'Email sent successfully' })
   } catch (error) {
     console.error(error)

@@ -26,62 +26,8 @@ const Milkbar_ContactSection: React.FC = (): React.ReactElement => {
 
   const [messageInput, setMessageInput] = useState('')
   const [emailInput, setEmailInput] = useState('')
+  const [emailSent, setEmailSent] = useState(false)
 
-  // const processEmail = async (e: React.MouseEvent<HTMLButtonElement>) => {
-  //   e.preventDefault()
-
-  //   try {
-  //     const response = await fetch('/api/sendEmail', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         email: emailInput,
-  //         message: messageInput,
-  //       }),
-  //     })
-
-  //     if (response.status === 200) {
-  //       console.log('Email sent successfully')
-  //       setEmailInput('')
-  //       setMessageInput('')
-  //     } else {
-  //       console.error('Error sending email')
-  //     }
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
-
-  // ---
-
-  // const processEmail = async (e: React.MouseEvent<Element>): Promise<void> => {
-  //   e.preventDefault()
-
-  //   try {
-  //     const response = await fetch('/api/sendEmail', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         email: emailInput,
-  //         message: messageInput,
-  //       }),
-  //     })
-
-  //     if (response.status === 200) {
-  //       console.log('Email sent successfully')
-  //       setEmailInput('')
-  //       setMessageInput('')
-  //     } else {
-  //       console.error('Error sending email')
-  //     }
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
   const sendEmail = async (): Promise<void> => {
     try {
       const response = await fetch('/api/sendEmail', {
@@ -99,6 +45,10 @@ const Milkbar_ContactSection: React.FC = (): React.ReactElement => {
         console.log('Email sent successfully')
         setEmailInput('')
         setMessageInput('')
+        setEmailSent(true)
+        setTimeout(() => {
+          setEmailSent(false)
+        }, 3000)
       } else {
         console.error('Error sending email')
       }
@@ -131,6 +81,7 @@ const Milkbar_ContactSection: React.FC = (): React.ReactElement => {
                       fullWidth: true,
                     }}
                     inputProps={{
+                      value: emailInput,
                       type: 'email',
                       endAdornment: (
                         <InputAdornment position="end">
@@ -147,6 +98,7 @@ const Milkbar_ContactSection: React.FC = (): React.ReactElement => {
                       fullWidth: true,
                     }}
                     inputProps={{
+                      value: messageInput,
                       multiline: true,
                       rows: 5,
                       type: 'text',
@@ -168,6 +120,7 @@ const Milkbar_ContactSection: React.FC = (): React.ReactElement => {
                   >
                     Send Message
                   </CT_CustomButton>
+                  {emailSent ? 'Message sent' : null}
                 </CT_CardFooter>
               </form>
             </CT_Card>
