@@ -9,7 +9,7 @@ import {
   CT_GridItem,
   CT_AppBar,
   CT_Parallax,
-  CT_Footer,
+  Milkbar_Footer,
   Milkbar_AppBarLinks,
 } from '@components/ui'
 import stylesUntyped from '../../../styles/jss/nextjs-material-kit/pages/landingPage.js'
@@ -66,7 +66,7 @@ export default function LandingPage(props: FC): ReactNode {
       <Milkbar_IconCarousel />
       <Milkbar_ContactSection />
 
-      <CT_Footer />
+      <Milkbar_Footer />
     </>
   )
 }

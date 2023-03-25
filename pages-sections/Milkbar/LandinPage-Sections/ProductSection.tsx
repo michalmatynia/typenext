@@ -36,7 +36,7 @@ const Milkbar_ProductSection: React.FC = (): React.ReactElement => {
       <CT_GridContainer styleProps={{ justifyContent: 'center' }}>
         <CT_GridItem xs={12} sm={12} md={8}>
           <CT_Card plain>
-            <h2 css={TitleStyle}>Let{"'"}s talk product</h2>
+            <h2 css={TitleStyle}>Simplicity is Quality</h2>
             <h5 css={DescriptionStyle}>
               Our commitment to quality is unwavering, and we use only the
               latest software and technology to deliver exceptional results on
@@ -64,16 +64,16 @@ const Milkbar_ProductSection: React.FC = (): React.ReactElement => {
               />
             </CT_GridItem>
             <h4 css={CardTitleStyle}>
-              Gigi Hadid
+              Lodge House
               <br />
-              <small css={css({ ...styles.smallTitle })}>Model</small>
+              <small css={css({ ...styles.smallTitle })}>Modelling</small>
             </h4>
             <CT_CardBody>
               <p css={DescriptionStyle}>
-                You can write here details about one of your team members. You
-                can give more details about what they do. Feel free to add some{' '}
-                <a href="#pablo">links</a> for people to be able to follow them
-                outside the site.
+                3D modelling is crucial for architectural visualisation. We use
+                software to create accurate digital representations of
+                buildings, helping clients understand and appreciate the design
+                before construction.
               </p>
             </CT_CardBody>
           </CT_Card>
@@ -94,16 +94,17 @@ const Milkbar_ProductSection: React.FC = (): React.ReactElement => {
               />
             </CT_GridItem>
             <h4 css={CardTitleStyle}>
-              Gigi Hadid
+              Multi Family House
               <br />
-              <small css={css({ ...styles.smallTitle })}>Model</small>
+              <small css={css({ ...styles.smallTitle })}>Visualisation</small>
             </h4>
             <CT_CardBody>
               <p css={DescriptionStyle}>
-                You can write here details about one of your team members. You
-                can give more details about what they do. Feel free to add some{' '}
-                <a href="#pablo">links</a> for people to be able to follow them
-                outside the site.
+                Architectural visualisation transforms ideas into
+                ultra-realistic digital representations of buildings. It enables
+                clients to explore every detail and make informed decisions
+                before construction begins. Our company creates stunning visuals
+                that are both accurate and breathtakingly beautiful.
               </p>
             </CT_CardBody>
           </CT_Card>
@@ -124,16 +125,16 @@ const Milkbar_ProductSection: React.FC = (): React.ReactElement => {
               />
             </CT_GridItem>
             <h4 css={CardTitleStyle}>
-              Gigi Hadid
+              Interior
               <br />
-              <small css={css({ ...styles.smallTitle })}>Model</small>
+              <small css={css({ ...styles.smallTitle })}>Design</small>
             </h4>
             <CT_CardBody>
               <p css={DescriptionStyle}>
-                You can write here details about one of your team members. You
-                can give more details about what they do. Feel free to add some{' '}
-                <a href="#pablo">links</a> for people to be able to follow them
-                outside the site.
+                Interior design is essential for architectural visualisation. 3D
+                models help clients visualise every detail, from furniture to
+                lighting. Our company creates beautiful and functional interior
+                designs to ensure complete client satisfaction.
               </p>
             </CT_CardBody>
           </CT_Card>

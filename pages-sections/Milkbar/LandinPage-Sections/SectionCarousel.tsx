@@ -51,12 +51,15 @@ const Milkbar_SectionCarousel: FC = (): React.ReactElement => {
     <Box sx={styles.section}>
       <CT_GridContainer styleProps={{ justifyContent: 'center' }}>
         <CT_GridItem xs={12} sm={12} md={8} styleProps={styles.marginAuto}>
-          <h2 css={css({ ...styles.title })}>Completed with examples</h2>
+          <h2 css={css({ ...styles.title })}>Our Portfolio</h2>
           <h4 css={css({ ...styles.description })}>
-            The kit comes with three pre-built pages to help you get started
-            faster. You can change the text and images and you{"'"}re good to
-            go. More importantly, looking at them will give you a picture of
-            what you can build with this powerful kit.
+            Includes 3D models and visualisations of buildings, both interior
+            and exterior, demonstrating the company{`'`}s ability to create
+            accurate and realistic representations of architectural designs. The
+            portfolio may also include before-and-after comparisons,
+            demonstrating the impact of the company{`'`}s work on a project. A
+            well-crafted portfolio highlights the company{`'`}s expertise and
+            serves as a valuable tool in attracting new clients.
           </h4>
         </CT_GridItem>
       </CT_GridContainer>
@@ -71,6 +74,7 @@ const Milkbar_SectionCarousel: FC = (): React.ReactElement => {
                   className="slick-image"
                   width={1000}
                   height={500}
+                  style={{ width: '100%', height: 'auto' }}
                 />
               </Box>
               <Box>
@@ -80,6 +84,7 @@ const Milkbar_SectionCarousel: FC = (): React.ReactElement => {
                   className="slick-image"
                   width={1000}
                   height={500}
+                  style={{ width: '100%', height: 'auto' }}
                 />
               </Box>
               <Box>
@@ -89,6 +94,7 @@ const Milkbar_SectionCarousel: FC = (): React.ReactElement => {
                   className="slick-image"
                   width={1000}
                   height={500}
+                  style={{ width: '100%', height: 'auto' }}
                 />
               </Box>
             </Carousel>

@@ -50,3 +50,4 @@ export { default as CT_Warning } from './ctui/Typography/Warning'
 
 /* Milkbar */
 export { default as Milkbar_AppBarLinks } from './milkbar/AppBar/AppBarLinks'
+export { default as Milkbar_Footer } from './milkbar/Footer'

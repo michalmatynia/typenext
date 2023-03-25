@@ -23,11 +23,13 @@ const Milkbar_IconSection: React.FC = (): React.ReactElement => {
         <CT_GridItem xs={12} sm={12} md={8}>
           <h2 css={css({ ...styles.title })}>Let{"'"}s talk product</h2>
           <h5 css={css({ ...styles.description })}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
+            In the world of architectural visualisation, the product is
+            everything. It is the end result that clients will judge and the
+            quality of the product will be a reflection of the company{`'`}s
+            reputation. A high-quality product demonstrates the company{`'`}s
+            ability to accurately and realistically depict architectural designs
+            in a digital format, helping clients better understand and
+            appreciate their designs before construction begins.
           </h5>
         </CT_GridItem>
       </CT_GridContainer>
@@ -36,8 +38,8 @@ const Milkbar_IconSection: React.FC = (): React.ReactElement => {
         <CT_GridContainer>
           <CT_GridItem xs={12} sm={12} md={4}>
             <CT_InfoArea
-              title="Free Chat"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              title="Plan Analysis"
+              description="It is a crucial aspect of architectural visualisation. It involves studying architectural plans to ensure accuracy and feasibility, helping designers and clients identify potential issues before construction begins."
               icon={MapsHomeWorkTwoToneIcon}
               iconColor="info"
               vertical
@@ -45,8 +47,8 @@ const Milkbar_IconSection: React.FC = (): React.ReactElement => {
           </CT_GridItem>
           <CT_GridItem xs={12} sm={12} md={4}>
             <CT_InfoArea
-              title="Verified Users"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              title="Ideas"
+              description="They are the foundation of any great architectural visualisation company. They drive innovation, creativity, and problem-solving, helping the company stand out in a highly competitive industry."
               icon={PsychologyTwoToneIcon}
               iconColor="info"
               vertical
@@ -54,8 +56,8 @@ const Milkbar_IconSection: React.FC = (): React.ReactElement => {
           </CT_GridItem>
           <CT_GridItem xs={12} sm={12} md={4}>
             <CT_InfoArea
-              title="Fingerprint"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              title="Next Level"
+              description="At an architectural visualisation company, launching the business to the next level means staying ahead of the competition and continuously improving the quality of the product, while also maintaining a focus on customer satisfaction."
               icon={RocketLaunchTwoToneIcon}
               iconColor="info"
               vertical
