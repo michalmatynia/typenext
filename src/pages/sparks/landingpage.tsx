@@ -7,12 +7,9 @@ import React, { CSSProperties, FC, ReactNode } from 'react'
 import {
   CT_GridContainer,
   CT_GridItem,
-  CT_CustomButton,
   CT_AppBar,
   CT_Parallax,
   CT_Footer,
-  CT_AppBarLinks,
-  Sparks_AppBarLinks,
 } from '@components/ui'
 import stylesUntyped from '../../../styles/jss/nextjs-material-kit/pages/landingPage.js'
 import ProductSection from '../../../pages-sections/LandingPage-Sections/ProductSection'
@@ -33,7 +30,7 @@ export default function LandingPage(props: FC): ReactNode {
       <CT_AppBar
         ct_color="transparent"
         brand="Sparks Of Sindri"
-        rightLinks={<Sparks_AppBarLinks />}
+        // rightLinks={<Sparks_AppBarLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,

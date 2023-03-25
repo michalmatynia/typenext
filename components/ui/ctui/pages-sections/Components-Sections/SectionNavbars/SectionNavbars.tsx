@@ -36,7 +36,7 @@ const CT_SectionNavbars: FC = (): React.ReactElement => {
               <h2>Menu</h2>
             </Box>
             <CT_AppBar
-              color="primary"
+              ct_color="primary"
               brand="Menu"
               leftLinks={
                 <List sx={styles.list}>
@@ -89,7 +89,7 @@ const CT_SectionNavbars: FC = (): React.ReactElement => {
               <h2>Menu with Icons</h2>
             </Box>
             <CT_AppBar
-              color="info"
+              ct_color="info"
               brand="Icons"
               rightLinks={
                 <List sx={styles.list}>
@@ -147,7 +147,7 @@ const CT_SectionNavbars: FC = (): React.ReactElement => {
         >
           <CT_AppBar
             brand="Brand"
-            color="rose"
+            ct_color="rose"
             leftLinks={
               <List sx={styles.list}>
                 <ListItem sx={styles.listItem}>
@@ -197,7 +197,7 @@ const CT_SectionNavbars: FC = (): React.ReactElement => {
           />
           <CT_AppBar
             brand="Primary Color"
-            color="primary"
+            ct_color="primary"
             rightLinks={
               <List sx={styles.list}>
                 <ListItem sx={styles.listItem}>
@@ -238,7 +238,7 @@ const CT_SectionNavbars: FC = (): React.ReactElement => {
           />
           <CT_AppBar
             brand="Navbar with notifications"
-            color="dark"
+            ct_color="dark"
             rightLinks={
               <List sx={styles.list}>
                 <ListItem sx={styles.listItem}>
@@ -346,7 +346,7 @@ const CT_SectionNavbars: FC = (): React.ReactElement => {
           />
           <CT_AppBar
             brand="Transparent"
-            color="transparent"
+            ct_color="transparent"
             rightLinks={
               <List sx={styles.list}>
                 <ListItem sx={styles.listItem}>

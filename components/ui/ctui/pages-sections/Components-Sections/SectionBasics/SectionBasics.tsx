@@ -17,7 +17,7 @@ import {
   Radio,
   Switch,
 } from '@mui/material'
-import Slider from 'nouislider'
+import { create } from 'nouislider'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import PeopleIcon from '@mui/icons-material/People'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
@@ -37,7 +37,7 @@ const CT_SectionBasics: FC = (): React.ReactElement => {
         .getElementById('sliderRegular')
         .classList.contains('noUi-target')
     ) {
-      Slider.create(document.getElementById('sliderRegular'), {
+      create(document.getElementById('sliderRegular'), {
         start: [40],
         connect: [true, false],
         step: 1,
@@ -47,7 +47,7 @@ const CT_SectionBasics: FC = (): React.ReactElement => {
     if (
       !document.getElementById('sliderDouble').classList.contains('noUi-target')
     ) {
-      Slider.create(document.getElementById('sliderDouble'), {
+      create(document.getElementById('sliderDouble'), {
         start: [20, 60],
         connect: [false, true, false],
         step: 1,
